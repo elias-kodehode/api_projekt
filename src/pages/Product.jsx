@@ -9,14 +9,15 @@ export default function Products() {
         queryFn: getProducts
     });
 
-    console.log(data);
+
+    if(isLoading) return    <p>loading..</p>
   return (
     <div>
       <h1>Products</h1>
 
       <div>
         {data.map(p => (
-            <p>{p.title}</p>
+            <p key={p.id}>{p.title}</p>
         ))}
       </div>
     </div>
